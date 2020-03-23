@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{81370F58-BD30-4250-8D98-8CB79C07607D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>KintaiKanri.My.MyApplication</StartupObject>
+    <RootNamespace>KintaiKanri</RootNamespace>
+    <AssemblyName>勤怠管理システム</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>勤怠管理システム.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>勤怠管理システム.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>clock.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.122.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form_ExportData.Designer.vb">
+      <DependentUpon>Form_ExportData.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_ExportData.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_ReadICCard.Designer.vb">
+      <DependentUpon>Form_ReadICCard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_ReadICCard.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_EditGroup.Designer.vb">
+      <DependentUpon>Form_EditGroup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_EditGroup.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_EditUser.Designer.vb">
+      <DependentUpon>Form_EditUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_EditUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_HolidayManager.Designer.vb">
+      <DependentUpon>Form_HolidayManager.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_HolidayManager.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_VerifiedHistory.Designer.vb">
+      <DependentUpon>Form_VerifiedHistory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_VerifiedHistory.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Print.Designer.vb">
+      <DependentUpon>Form_Print.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Print.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_PublicHoliday.Designer.vb">
+      <DependentUpon>Form_PublicHoliday.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_PublicHoliday.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_VerifiedList.Designer.vb">
+      <DependentUpon>Form_VerifiedList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_VerifiedList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_TimeCard.Designer.vb">
+      <DependentUpon>Form_TimeCard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_TimeCard.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Menu.Designer.vb">
+      <DependentUpon>Form_Menu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Menu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Main.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Main.Designer.vb">
+      <DependentUpon>Form_Main.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="WinSCard\clsWinSCard.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Form_ExportData.resx">
+      <DependentUpon>Form_ExportData.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_ReadICCard.resx">
+      <DependentUpon>Form_ReadICCard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_EditGroup.resx">
+      <DependentUpon>Form_EditGroup.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_EditUser.resx">
+      <DependentUpon>Form_EditUser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_HolidayManager.resx">
+      <DependentUpon>Form_HolidayManager.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_VerifiedHistory.resx">
+      <DependentUpon>Form_VerifiedHistory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Print.resx">
+      <DependentUpon>Form_Print.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_PublicHoliday.resx">
+      <DependentUpon>Form_PublicHoliday.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_VerifiedList.resx">
+      <DependentUpon>Form_VerifiedList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_TimeCard.resx">
+      <DependentUpon>Form_TimeCard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Menu.resx">
+      <DependentUpon>Form_Menu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Main.resx">
+      <DependentUpon>Form_Main.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="clock.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>
