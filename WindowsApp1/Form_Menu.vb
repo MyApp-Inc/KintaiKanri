@@ -120,4 +120,11 @@ Public Class Form_Menu
         'モーダルでフォームを表示する
         cForm_ExportData.ShowDialog(Me)
     End Sub
+
+    Private Sub Button_DocApproval_Click(sender As Object, e As EventArgs) Handles Button_DocApproval.Click
+        'フォームのインスタンスを生成する
+        Dim cForm_DocApproval As New Form_DocApproval
+        'モーダルでフォームを表示する
+        cForm_DocApproval.ShowDialog(Me)
+    End Sub
 End Class

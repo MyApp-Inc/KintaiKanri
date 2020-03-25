@@ -37,13 +37,14 @@ Partial Class Form_Menu
         Me.Button_MenuPublicHoliday = New System.Windows.Forms.Button()
         Me.Button_MenuPrint = New System.Windows.Forms.Button()
         Me.Button_MenuReadICCard = New System.Windows.Forms.Button()
+        Me.Button_DocApproval = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Button_MenuEnd
         '
         Me.Button_MenuEnd.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button_MenuEnd.Font = New System.Drawing.Font("MS UI Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.Button_MenuEnd.Location = New System.Drawing.Point(481, 566)
+        Me.Button_MenuEnd.Location = New System.Drawing.Point(766, 530)
         Me.Button_MenuEnd.Name = "Button_MenuEnd"
         Me.Button_MenuEnd.Size = New System.Drawing.Size(112, 36)
         Me.Button_MenuEnd.TabIndex = 9
@@ -55,7 +56,7 @@ Partial Class Form_Menu
         Me.Label_MenuTitle.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label_MenuTitle.AutoSize = True
         Me.Label_MenuTitle.Font = New System.Drawing.Font("MS UI Gothic", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.Label_MenuTitle.Location = New System.Drawing.Point(266, 33)
+        Me.Label_MenuTitle.Location = New System.Drawing.Point(399, 33)
         Me.Label_MenuTitle.Name = "Label_MenuTitle"
         Me.Label_MenuTitle.Size = New System.Drawing.Size(102, 22)
         Me.Label_MenuTitle.TabIndex = 10
@@ -65,7 +66,7 @@ Partial Class Form_Menu
         '
         Me.Button_Menu1.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Button_Menu1.Font = New System.Drawing.Font("MS UI Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.Button_Menu1.Location = New System.Drawing.Point(28, 133)
+        Me.Button_Menu1.Location = New System.Drawing.Point(16, 135)
         Me.Button_Menu1.Name = "Button_Menu1"
         Me.Button_Menu1.Size = New System.Drawing.Size(266, 36)
         Me.Button_Menu1.TabIndex = 0
@@ -76,7 +77,7 @@ Partial Class Form_Menu
         '
         Me.Button_MenuVerify.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Button_MenuVerify.Font = New System.Drawing.Font("MS UI Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.Button_MenuVerify.Location = New System.Drawing.Point(28, 243)
+        Me.Button_MenuVerify.Location = New System.Drawing.Point(16, 251)
         Me.Button_MenuVerify.Name = "Button_MenuVerify"
         Me.Button_MenuVerify.Size = New System.Drawing.Size(266, 36)
         Me.Button_MenuVerify.TabIndex = 1
@@ -87,7 +88,7 @@ Partial Class Form_Menu
         '
         Me.Button_MenuExportData.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Button_MenuExportData.Font = New System.Drawing.Font("MS UI Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.Button_MenuExportData.Location = New System.Drawing.Point(328, 500)
+        Me.Button_MenuExportData.Location = New System.Drawing.Point(612, 432)
         Me.Button_MenuExportData.Name = "Button_MenuExportData"
         Me.Button_MenuExportData.Size = New System.Drawing.Size(266, 36)
         Me.Button_MenuExportData.TabIndex = 5
@@ -98,7 +99,7 @@ Partial Class Form_Menu
         '
         Me.Button_MenuEditUser.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Button_MenuEditUser.Font = New System.Drawing.Font("MS UI Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.Button_MenuEditUser.Location = New System.Drawing.Point(28, 437)
+        Me.Button_MenuEditUser.Location = New System.Drawing.Point(16, 432)
         Me.Button_MenuEditUser.Name = "Button_MenuEditUser"
         Me.Button_MenuEditUser.Size = New System.Drawing.Size(266, 36)
         Me.Button_MenuEditUser.TabIndex = 7
@@ -109,7 +110,7 @@ Partial Class Form_Menu
         '
         Me.Button_MenuEditGroup.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Button_MenuEditGroup.Font = New System.Drawing.Font("MS UI Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.Button_MenuEditGroup.Location = New System.Drawing.Point(328, 437)
+        Me.Button_MenuEditGroup.Location = New System.Drawing.Point(314, 432)
         Me.Button_MenuEditGroup.Name = "Button_MenuEditGroup"
         Me.Button_MenuEditGroup.Size = New System.Drawing.Size(266, 36)
         Me.Button_MenuEditGroup.TabIndex = 8
@@ -121,7 +122,7 @@ Partial Class Form_Menu
         Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("MS UI Gothic", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.Label1.Location = New System.Drawing.Point(24, 83)
+        Me.Label1.Location = New System.Drawing.Point(12, 84)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(102, 22)
         Me.Label1.TabIndex = 11
@@ -132,7 +133,7 @@ Partial Class Form_Menu
         Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("MS UI Gothic", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.Label2.Location = New System.Drawing.Point(24, 198)
+        Me.Label2.Location = New System.Drawing.Point(12, 200)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(102, 22)
         Me.Label2.TabIndex = 12
@@ -143,7 +144,7 @@ Partial Class Form_Menu
         Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("MS UI Gothic", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.Label3.Location = New System.Drawing.Point(24, 313)
+        Me.Label3.Location = New System.Drawing.Point(12, 316)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(102, 22)
         Me.Label3.TabIndex = 13
@@ -153,7 +154,7 @@ Partial Class Form_Menu
         '
         Me.Button_MenuHolidayManager.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Button_MenuHolidayManager.Font = New System.Drawing.Font("MS UI Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.Button_MenuHolidayManager.Location = New System.Drawing.Point(28, 371)
+        Me.Button_MenuHolidayManager.Location = New System.Drawing.Point(16, 367)
         Me.Button_MenuHolidayManager.Name = "Button_MenuHolidayManager"
         Me.Button_MenuHolidayManager.Size = New System.Drawing.Size(266, 36)
         Me.Button_MenuHolidayManager.TabIndex = 4
@@ -164,7 +165,7 @@ Partial Class Form_Menu
         '
         Me.Button_MenuPublicHoliday.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Button_MenuPublicHoliday.Font = New System.Drawing.Font("MS UI Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.Button_MenuPublicHoliday.Location = New System.Drawing.Point(327, 371)
+        Me.Button_MenuPublicHoliday.Location = New System.Drawing.Point(314, 367)
         Me.Button_MenuPublicHoliday.Name = "Button_MenuPublicHoliday"
         Me.Button_MenuPublicHoliday.Size = New System.Drawing.Size(266, 36)
         Me.Button_MenuPublicHoliday.TabIndex = 6
@@ -175,7 +176,7 @@ Partial Class Form_Menu
         '
         Me.Button_MenuPrint.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Button_MenuPrint.Font = New System.Drawing.Font("MS UI Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.Button_MenuPrint.Location = New System.Drawing.Point(28, 500)
+        Me.Button_MenuPrint.Location = New System.Drawing.Point(612, 367)
         Me.Button_MenuPrint.Name = "Button_MenuPrint"
         Me.Button_MenuPrint.Size = New System.Drawing.Size(266, 36)
         Me.Button_MenuPrint.TabIndex = 2
@@ -186,19 +187,31 @@ Partial Class Form_Menu
         '
         Me.Button_MenuReadICCard.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Button_MenuReadICCard.Font = New System.Drawing.Font("MS UI Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.Button_MenuReadICCard.Location = New System.Drawing.Point(327, 133)
+        Me.Button_MenuReadICCard.Location = New System.Drawing.Point(314, 135)
         Me.Button_MenuReadICCard.Name = "Button_MenuReadICCard"
         Me.Button_MenuReadICCard.Size = New System.Drawing.Size(266, 36)
         Me.Button_MenuReadICCard.TabIndex = 3
         Me.Button_MenuReadICCard.Text = "ＩＣカード勤怠管理"
         Me.Button_MenuReadICCard.UseVisualStyleBackColor = True
         '
+        'Button_DocApproval
+        '
+        Me.Button_DocApproval.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Button_DocApproval.Font = New System.Drawing.Font("MS UI Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.Button_DocApproval.Location = New System.Drawing.Point(612, 135)
+        Me.Button_DocApproval.Name = "Button_DocApproval"
+        Me.Button_DocApproval.Size = New System.Drawing.Size(266, 36)
+        Me.Button_DocApproval.TabIndex = 14
+        Me.Button_DocApproval.Text = "電子承認申請"
+        Me.Button_DocApproval.UseVisualStyleBackColor = True
+        '
         'Form_Menu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
-        Me.ClientSize = New System.Drawing.Size(622, 614)
+        Me.ClientSize = New System.Drawing.Size(888, 578)
+        Me.Controls.Add(Me.Button_DocApproval)
         Me.Controls.Add(Me.Button_MenuReadICCard)
         Me.Controls.Add(Me.Button_MenuPrint)
         Me.Controls.Add(Me.Button_MenuPublicHoliday)
@@ -236,4 +249,5 @@ Partial Class Form_Menu
     Friend WithEvents Button_MenuPublicHoliday As Button
     Friend WithEvents Button_MenuPrint As Button
     Friend WithEvents Button_MenuReadICCard As Button
+    Friend WithEvents Button_DocApproval As Button
 End Class
