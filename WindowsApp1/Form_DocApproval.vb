@@ -198,15 +198,105 @@ Public Class Form_DocApproval
     End Sub
 
     Private Sub Button_Execute_Click(sender As Object, e As EventArgs) Handles Button_Execute.Click
-        Dim ExportFile As String = FileServerDir + "\" + TextBox_ApprovalFile.Text
+        Dim UserDir As String = FileServerDir + "\" + DBName
+        Dim ExportFile As String = UserDir + "\" + TextBox_ApprovalFile.Text
         If IO.File.Exists(ImportFile) Then
+            'フォルダ作成
+            If IO.Directory.Exists(UserDir) = False Then
+                IO.Directory.CreateDirectory(UserDir)
+            End If
             'ファイルを一時フォルダにコピー
             IO.File.Copy(ImportFile, ExportFile, True)
-            'ZIP書庫を作成
-            'IO.Compression.ZipFile.CreateFromDirectory(FileServerDir, ExportDir + "\" + DBName + "_" + Date.Now.ToString("yyMMddHHmmss") + ".zip")
+            '作成日を設定
+            Dim CreateDate As Date = Date.Now
+            '作成するZIP書庫のパス
+            'ファイルが既に存在している場合は、上書きされる
+            Dim zipFileName As String = ExportDir + "\" + DBName + "_" + CreateDate.ToString("yyMMddHHmmss") + ".zip"
+            '圧縮するフォルダのパス
+            Dim sourceDirectory As String = UserDir
+            'サブディレクトリも圧縮するかどうか
+            Dim recurse As Boolean = True
+            '★☆★最重要機密事項★☆★パスワード生成
+            Dim src As Long = Long.Parse(CreateDate.ToString("yyyyMMddHHmmss"))
+            Dim Temp1 As Integer = src Mod 83
+            Dim Temp2 As Integer = src Mod 89
+            Dim Temp3 As Integer = src Mod 97
+            Dim Passwd As String = DBName.Substring(0, 1) + Temp1.ToString + Temp2.ToString + Temp3.ToString + DBName.Substring(1, 1)
+            'MsgBox(Passwd)
+
+            'FastZipオブジェクトの作成
+            Dim fastZip As New ICSharpCode.SharpZipLib.Zip.FastZip()
+            '空のフォルダも書庫に入れるか。デフォルトはfalse
+            fastZip.CreateEmptyDirectories = True
+            'ZIP64を使うか。デフォルトはDynamicで、状況に応じてZIP64を使う
+            '（大きなファイルはZIP64でしか圧縮できないが、対応していないアーカイバもある）
+            fastZip.UseZip64 = ICSharpCode.SharpZipLib.Zip.UseZip64.Dynamic
+            'パスワードを設定するには次のようにする
+            fastZip.Password = Passwd
+
+            '圧縮してZIP書庫を作成
+            fastZip.CreateZip(zipFileName, sourceDirectory, recurse, Nothing, Nothing)
+
             'ファイルを一時フォルダから削除
-            'IO.File.Delete(ExportFile)
+            IO.File.Delete(ExportFile)
+
+            'OracleConnectionオブジェクトを生成
+            Dim con As New OracleConnection(Constr)
+            'SQL文を作成
+            Dim SQLDoc As String = "SELECT * FROM tt_kintai_docapproval"
+            'DataAdapterオブジェクトを生成
+            Dim daDoc As New OracleDataAdapter(SQLDoc, con)
+            'OracleCommandBuilderオブジェクトを生成
+            Dim cmdbuilder As New OracleCommandBuilder(daDoc)
+            'DataTableオブジェクトを生成
+            Dim dtDoc As New DataTable()
+            'DataTableとデータベースに同期させる
+            daDoc.Fill(dtDoc)
+            '申請情報をデータベースに格納
+            Dim row As DataRow = dtDoc.NewRow '追加行を宣言
+            'IDを採番
+            Dim Id As Integer = dtDoc.Rows.Count
+            Do
+                Id += 1
+                Dim drlistId As DataRow() = dtDoc.Select("id_no = '" + Id.ToString + "'")
+                If drlistId.Count = 0 Then
+                    Exit Do
+                End If
+            Loop
+            row("id_no") = Id
+            row("user_id") = DBName
+            row("subject") = TextBox_ApprovalSubject.Text
+            row("file_name") = IO.Path.GetFileNameWithoutExtension(zipFileName)
+            row("approval_division_kbn") = 0
+            row("approval_department_kbn") = 0
+            row("approval_bureau_kbn") = 0
+            row("approval_manager1_kbn") = 0
+            row("approval_manager2_kbn") = ""
+            row("approval_manager3_kbn") = ""
+            row("approval_manager4_kbn") = ""
+            row("approval_coo_kbn") = ""
+            row("approval_cfo_kbn") = ""
+            row("approval_boss1_kbn") = ""
+            row("approval_boss2_kbn") = ""
+            row("create_date") = CreateDate
+            row("update_date") = CreateDate
+            row("create_program") = "KINTAI_KANRI_SYSTEM"
+            row("update_program") = "KINTAI_KANRI_SYSTEM"
+            row("create_user") = DBName
+            row("update_user") = DBName
+            'テーブルの末尾に追加
+            dtDoc.Rows.Add(row)
+            daDoc.Update(dtDoc)
+            MsgBox("電子承認申請が完了しました。", vbOKOnly, "電子承認申請完了")
+            'フォーム初期化
+            TextBox_ApprovalSubject.Text = Nothing
+            TextBox_ApprovalFile.Text = Nothing
+            For Each CheckBoxPerson As CheckBox In GroupBox_Person.Controls
+                CheckBoxPerson.Checked = False
+            Next
+            con = Nothing
+        Else
+            MsgBox("申請ファイルが存在しません。", vbOKOnly, "エラー")
         End If
-        MsgBox("電子承認申請が完了しました。", vbOKOnly, "電子承認申請完了")
     End Sub
 End Class
