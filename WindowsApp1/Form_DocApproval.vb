@@ -11,8 +11,8 @@ Public Class Form_DocApproval
                             "      )" +
                             "    )" +
                             ";Pooling=false"
-    Dim PersonCount As Integer = 0
     Dim DBName As String = SystemInformation.UserName
+    Dim PersonCount As Integer = 0
     Dim ImportFile As String = ""
     Dim FileServerDir As String = "\\atgmsfs1\it\COMMON\勤怠管理システム【テスト版】\files"
     Dim ExportDir As String = "\\atgmsfs1\it\COMMON\勤怠管理システム【テスト版】\exportfiles"
@@ -267,17 +267,61 @@ Public Class Form_DocApproval
             row("user_id") = DBName
             row("subject") = TextBox_ApprovalSubject.Text
             row("file_name") = IO.Path.GetFileNameWithoutExtension(zipFileName)
-            row("approval_division_kbn") = 0
-            row("approval_department_kbn") = 0
-            row("approval_bureau_kbn") = 0
-            row("approval_manager1_kbn") = 0
-            row("approval_manager2_kbn") = ""
-            row("approval_manager3_kbn") = ""
-            row("approval_manager4_kbn") = ""
-            row("approval_coo_kbn") = ""
-            row("approval_cfo_kbn") = ""
-            row("approval_boss1_kbn") = ""
-            row("approval_boss2_kbn") = ""
+            If CheckBox_Division.Checked Then
+                row("approval_division_kbn") = 0
+            Else
+                row("approval_division_kbn") = 9
+            End If
+            If CheckBox_Department.Checked Then
+                row("approval_department_kbn") = 0
+            Else
+                row("approval_department_kbn") = 9
+            End If
+            If CheckBox_Bureau.Checked Then
+                row("approval_bureau_kbn") = 0
+            Else
+                row("approval_bureau_kbn") = 9
+            End If
+            If CheckBox_Manager1.Checked Then
+                row("approval_manager1_kbn") = 0
+            Else
+                row("approval_manager1_kbn") = 9
+            End If
+            If CheckBox_Manager2.Checked Then
+                row("approval_manager2_kbn") = 0
+            Else
+                row("approval_manager2_kbn") = 9
+            End If
+            If CheckBox_Manager3.Checked Then
+                row("approval_manager3_kbn") = 0
+            Else
+                row("approval_manager3_kbn") = 9
+            End If
+            If CheckBox_Manager4.Checked Then
+                row("approval_manager4_kbn") = 0
+            Else
+                row("approval_manager4_kbn") = 9
+            End If
+            If CheckBox_COO.Checked Then
+                row("approval_coo_kbn") = 0
+            Else
+                row("approval_coo_kbn") = 9
+            End If
+            If CheckBox_CFO.Checked Then
+                row("approval_cfo_kbn") = 0
+            Else
+                row("approval_cfo_kbn") = 9
+            End If
+            If CheckBox_Boss1.Checked Then
+                row("approval_boss1_kbn") = 0
+            Else
+                row("approval_boss1_kbn") = 9
+            End If
+            If CheckBox_Boss2.Checked Then
+                row("approval_boss2_kbn") = 0
+            Else
+                row("approval_boss2_kbn") = 9
+            End If
             row("create_date") = CreateDate
             row("update_date") = CreateDate
             row("create_program") = "KINTAI_KANRI_SYSTEM"

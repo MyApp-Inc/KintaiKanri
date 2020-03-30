@@ -38,6 +38,7 @@ Partial Class Form_Menu
         Me.Button_MenuPrint = New System.Windows.Forms.Button()
         Me.Button_MenuReadICCard = New System.Windows.Forms.Button()
         Me.Button_DocApproval = New System.Windows.Forms.Button()
+        Me.Button_DocApprovalList = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Button_MenuEnd
@@ -205,12 +206,24 @@ Partial Class Form_Menu
         Me.Button_DocApproval.Text = "電子承認申請"
         Me.Button_DocApproval.UseVisualStyleBackColor = True
         '
+        'Button_DocApprovalList
+        '
+        Me.Button_DocApprovalList.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Button_DocApprovalList.Font = New System.Drawing.Font("MS UI Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.Button_DocApprovalList.Location = New System.Drawing.Point(314, 251)
+        Me.Button_DocApprovalList.Name = "Button_DocApprovalList"
+        Me.Button_DocApprovalList.Size = New System.Drawing.Size(266, 36)
+        Me.Button_DocApprovalList.TabIndex = 15
+        Me.Button_DocApprovalList.Text = "電子承認申請の承認"
+        Me.Button_DocApprovalList.UseVisualStyleBackColor = True
+        '
         'Form_Menu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.ClientSize = New System.Drawing.Size(888, 578)
+        Me.Controls.Add(Me.Button_DocApprovalList)
         Me.Controls.Add(Me.Button_DocApproval)
         Me.Controls.Add(Me.Button_MenuReadICCard)
         Me.Controls.Add(Me.Button_MenuPrint)
@@ -250,4 +263,5 @@ Partial Class Form_Menu
     Friend WithEvents Button_MenuPrint As Button
     Friend WithEvents Button_MenuReadICCard As Button
     Friend WithEvents Button_DocApproval As Button
+    Friend WithEvents Button_DocApprovalList As Button
 End Class
