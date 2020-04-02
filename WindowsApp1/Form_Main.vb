@@ -10,6 +10,7 @@ Public Class Form_Main
     Dim DBEndTime As String = Date.Now
     Dim DBRole As String = "0"
     Dim IsDouble As Boolean = False
+    Dim IsBaloon As Boolean = False
     'Dim constr As String = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=\\atgmsfs1\it\COMMON\Shibata\DB\KintaiKanriTestDB.mdf;Integrated Security=True;Connect Timeout=30"
     Dim Constr As String = "user id=pcs;password=pcs;data source=" +
                             "  (DESCRIPTION =" +
@@ -168,7 +169,7 @@ Public Class Form_Main
     Private Sub Timer_NowTime_Tick(sender As Object, e As EventArgs) Handles Timer_NowTime.Tick
         Label_NowTime.Text = Date.Now.ToString("HH:mm")
         If Label_NowTime.Text = "05:00" Then
-            Me.Close()
+            Close()
         End If
     End Sub
 
@@ -536,5 +537,31 @@ Public Class Form_Main
         If IO.File.Exists(ImportFile) Then
             IO.File.Copy(ImportFile, ExportFile, True)
         End If
+    End Sub
+    Private Sub Form_Main_Resize(sender As Object, e As EventArgs) Handles Me.Resize
+        If Me.WindowState = FormWindowState.Minimized Then
+            'フォームを非表示にする
+            Visible = False
+            'バルーンTIPを起動後初回だけ表示
+            If IsBaloon = False Then
+                NotifyIcon_Main.ShowBalloonTip(0)
+                IsBaloon = True
+            End If
+        End If
+    End Sub
+
+    Private Sub NotifyIcon_Main_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles NotifyIcon_Main.MouseDoubleClick
+        'フォームを表示する
+        Visible = True
+        If Me.WindowState = FormWindowState.Minimized Then
+            'ノーマルウィンドウに戻す
+            WindowState = FormWindowState.Normal
+        End If
+        'アクティブにする
+        Activate()
+    End Sub
+
+    Private Sub ToolStripMenuItem_End_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem_End.Click
+        Close()
     End Sub
 End Class

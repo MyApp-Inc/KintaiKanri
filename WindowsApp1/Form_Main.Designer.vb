@@ -64,7 +64,11 @@ Partial Class Form_Main
         Me.RadioButton_Break = New System.Windows.Forms.RadioButton()
         Me.Timer_MouseCheck = New System.Windows.Forms.Timer(Me.components)
         Me.Label_Notification = New System.Windows.Forms.Label()
+        Me.NotifyIcon_Main = New System.Windows.Forms.NotifyIcon(Me.components)
+        Me.ContextMenuStrip_Settings = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.ToolStripMenuItem_End = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.DataGridView_Status, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ContextMenuStrip_Settings.SuspendLayout()
         Me.SuspendLayout()
         '
         'Button_End
@@ -188,7 +192,6 @@ Partial Class Form_Main
         Me.Button_TestT.TabIndex = 25
         Me.Button_TestT.Text = "テスト太郎"
         Me.Button_TestT.UseVisualStyleBackColor = True
-        Me.Button_TestT.Visible = False
         '
         'Button_TestH
         '
@@ -477,6 +480,30 @@ Partial Class Form_Main
         Me.Label_Notification.Text = "承認待ち申請：n件"
         Me.Label_Notification.Visible = False
         '
+        'NotifyIcon_Main
+        '
+        Me.NotifyIcon_Main.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info
+        Me.NotifyIcon_Main.BalloonTipText = "勤怠管理システムがタスクトレイに格納されました。" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "もう一度表示するには、このアイコンをダブルクリックしてください。"
+        Me.NotifyIcon_Main.BalloonTipTitle = "勤怠管理システム最小化"
+        Me.NotifyIcon_Main.ContextMenuStrip = Me.ContextMenuStrip_Settings
+        Me.NotifyIcon_Main.Icon = CType(resources.GetObject("NotifyIcon_Main.Icon"), System.Drawing.Icon)
+        Me.NotifyIcon_Main.Text = "勤怠管理システム"
+        Me.NotifyIcon_Main.Visible = True
+        '
+        'ContextMenuStrip_Settings
+        '
+        Me.ContextMenuStrip_Settings.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem_End})
+        Me.ContextMenuStrip_Settings.Name = "ContextMenuStrip_Settings"
+        Me.ContextMenuStrip_Settings.Size = New System.Drawing.Size(181, 48)
+        Me.ContextMenuStrip_Settings.Text = "機能"
+        '
+        'ToolStripMenuItem_End
+        '
+        Me.ToolStripMenuItem_End.Name = "ToolStripMenuItem_End"
+        Me.ToolStripMenuItem_End.Size = New System.Drawing.Size(180, 22)
+        Me.ToolStripMenuItem_End.Text = "終了（退勤）"
+        Me.ToolStripMenuItem_End.ToolTipText = "勤怠管理システムを終了し、退勤時刻を打刻します。"
+        '
         'Form_Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
@@ -517,6 +544,7 @@ Partial Class Form_Main
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "勤怠管理システム"
         CType(Me.DataGridView_Status, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ContextMenuStrip_Settings.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -557,4 +585,7 @@ Partial Class Form_Main
     Friend WithEvents Column_Sttatus As DataGridViewTextBoxColumn
     Friend WithEvents Column_MainMessage As DataGridViewTextBoxColumn
     Friend WithEvents Column_Update As DataGridViewTextBoxColumn
+    Friend WithEvents NotifyIcon_Main As NotifyIcon
+    Friend WithEvents ContextMenuStrip_Settings As ContextMenuStrip
+    Friend WithEvents ToolStripMenuItem_End As ToolStripMenuItem
 End Class

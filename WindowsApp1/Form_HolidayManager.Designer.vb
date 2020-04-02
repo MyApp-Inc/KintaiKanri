@@ -33,12 +33,6 @@ Partial Class Form_HolidayManager
         Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form_HolidayManager))
         Me.DataGridView_HolidayManager = New System.Windows.Forms.DataGridView()
-        Me.Column_Group = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column_FullName = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column_PreHoliday = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column_PreVerify = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.Column_Holiday = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column_AfterVerify = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.Button_HolidayManagerClose = New System.Windows.Forms.Button()
         Me.Label_HolidayManagerTitle = New System.Windows.Forms.Label()
         Me.DateTimePicker_HolidayManagerTargetYear = New System.Windows.Forms.DateTimePicker()
@@ -47,6 +41,12 @@ Partial Class Form_HolidayManager
         Me.ColumnHeader_Date = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader_Number1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader_Number2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.Column_Group = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column_FullName = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column_PreHoliday = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column_PreVerify = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.Column_Holiday = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column_AfterVerify = New System.Windows.Forms.DataGridViewButtonColumn()
         CType(Me.DataGridView_HolidayManager, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -86,78 +86,6 @@ Partial Class Form_HolidayManager
         Me.DataGridView_HolidayManager.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DataGridView_HolidayManager.Size = New System.Drawing.Size(970, 400)
         Me.DataGridView_HolidayManager.TabIndex = 4
-        '
-        'Column_Group
-        '
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("MS UI Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Column_Group.DefaultCellStyle = DataGridViewCellStyle3
-        Me.Column_Group.FillWeight = 200.0!
-        Me.Column_Group.HeaderText = "所属"
-        Me.Column_Group.MaxInputLength = 100
-        Me.Column_Group.Name = "Column_Group"
-        Me.Column_Group.ReadOnly = True
-        Me.Column_Group.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        '
-        'Column_FullName
-        '
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Column_FullName.DefaultCellStyle = DataGridViewCellStyle4
-        Me.Column_FullName.FillWeight = 150.0!
-        Me.Column_FullName.HeaderText = "氏名"
-        Me.Column_FullName.MaxInputLength = 100
-        Me.Column_FullName.Name = "Column_FullName"
-        Me.Column_FullName.ReadOnly = True
-        Me.Column_FullName.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.Column_FullName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        '
-        'Column_PreHoliday
-        '
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Column_PreHoliday.DefaultCellStyle = DataGridViewCellStyle5
-        Me.Column_PreHoliday.FillWeight = 200.0!
-        Me.Column_PreHoliday.HeaderText = "振替休日指示日"
-        Me.Column_PreHoliday.MaxInputLength = 100
-        Me.Column_PreHoliday.Name = "Column_PreHoliday"
-        Me.Column_PreHoliday.ReadOnly = True
-        Me.Column_PreHoliday.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.Column_PreHoliday.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        '
-        'Column_PreVerify
-        '
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.Column_PreVerify.DefaultCellStyle = DataGridViewCellStyle6
-        Me.Column_PreVerify.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Column_PreVerify.HeaderText = ""
-        Me.Column_PreVerify.Name = "Column_PreVerify"
-        Me.Column_PreVerify.ReadOnly = True
-        Me.Column_PreVerify.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.Column_PreVerify.Text = "確認"
-        '
-        'Column_Holiday
-        '
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Column_Holiday.DefaultCellStyle = DataGridViewCellStyle7
-        Me.Column_Holiday.FillWeight = 200.0!
-        Me.Column_Holiday.HeaderText = "実振替休日日"
-        Me.Column_Holiday.MaxInputLength = 100
-        Me.Column_Holiday.Name = "Column_Holiday"
-        Me.Column_Holiday.ReadOnly = True
-        Me.Column_Holiday.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.Column_Holiday.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        '
-        'Column_AfterVerify
-        '
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.Column_AfterVerify.DefaultCellStyle = DataGridViewCellStyle8
-        Me.Column_AfterVerify.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Column_AfterVerify.HeaderText = ""
-        Me.Column_AfterVerify.Name = "Column_AfterVerify"
-        Me.Column_AfterVerify.ReadOnly = True
-        Me.Column_AfterVerify.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.Column_AfterVerify.Text = "確認"
         '
         'Button_HolidayManagerClose
         '
@@ -237,6 +165,78 @@ Partial Class Form_HolidayManager
         '
         Me.ColumnHeader_Number2.Text = "確認済"
         Me.ColumnHeader_Number2.Width = 70
+        '
+        'Column_Group
+        '
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("MS UI Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Column_Group.DefaultCellStyle = DataGridViewCellStyle3
+        Me.Column_Group.FillWeight = 200.0!
+        Me.Column_Group.HeaderText = "所属"
+        Me.Column_Group.MaxInputLength = 100
+        Me.Column_Group.Name = "Column_Group"
+        Me.Column_Group.ReadOnly = True
+        Me.Column_Group.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        '
+        'Column_FullName
+        '
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Column_FullName.DefaultCellStyle = DataGridViewCellStyle4
+        Me.Column_FullName.FillWeight = 150.0!
+        Me.Column_FullName.HeaderText = "氏名"
+        Me.Column_FullName.MaxInputLength = 100
+        Me.Column_FullName.Name = "Column_FullName"
+        Me.Column_FullName.ReadOnly = True
+        Me.Column_FullName.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.Column_FullName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        '
+        'Column_PreHoliday
+        '
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Column_PreHoliday.DefaultCellStyle = DataGridViewCellStyle5
+        Me.Column_PreHoliday.FillWeight = 200.0!
+        Me.Column_PreHoliday.HeaderText = "振替休日指示日"
+        Me.Column_PreHoliday.MaxInputLength = 100
+        Me.Column_PreHoliday.Name = "Column_PreHoliday"
+        Me.Column_PreHoliday.ReadOnly = True
+        Me.Column_PreHoliday.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.Column_PreHoliday.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        '
+        'Column_PreVerify
+        '
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.Column_PreVerify.DefaultCellStyle = DataGridViewCellStyle6
+        Me.Column_PreVerify.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Column_PreVerify.HeaderText = ""
+        Me.Column_PreVerify.Name = "Column_PreVerify"
+        Me.Column_PreVerify.ReadOnly = True
+        Me.Column_PreVerify.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.Column_PreVerify.Text = "確認"
+        '
+        'Column_Holiday
+        '
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Column_Holiday.DefaultCellStyle = DataGridViewCellStyle7
+        Me.Column_Holiday.FillWeight = 200.0!
+        Me.Column_Holiday.HeaderText = "実振替休日日"
+        Me.Column_Holiday.MaxInputLength = 100
+        Me.Column_Holiday.Name = "Column_Holiday"
+        Me.Column_Holiday.ReadOnly = True
+        Me.Column_Holiday.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.Column_Holiday.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        '
+        'Column_AfterVerify
+        '
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.Column_AfterVerify.DefaultCellStyle = DataGridViewCellStyle8
+        Me.Column_AfterVerify.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Column_AfterVerify.HeaderText = ""
+        Me.Column_AfterVerify.Name = "Column_AfterVerify"
+        Me.Column_AfterVerify.ReadOnly = True
+        Me.Column_AfterVerify.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.Column_AfterVerify.Text = "確認"
         '
         'Form_HolidayManager
         '

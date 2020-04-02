@@ -1,5 +1,5 @@
 ﻿Imports Oracle.ManagedDataAccess.Client
-Public Class Form_DocApproval
+Public Class Form_AddinDocApproval
     Dim Constr As String = "user id=pcs;password=pcs;data source=" +
                             "  (DESCRIPTION =" +
                             "      (ADDRESS_LIST =" +

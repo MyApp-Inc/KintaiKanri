@@ -14,6 +14,7 @@ Public Class Form_DocApprovalList
     Dim DBName As String = SystemInformation.UserName
     Dim Role As Integer = 0
     Dim ImportDir As String = "\\atgmsfs1\it\COMMON\勤怠管理システム【テスト版】\exportfiles"
+    Dim targetDirectory As String = "C:\kintaiKanriSystem"
     Private Sub Button_Close_Click(sender As Object, e As EventArgs) Handles Button_Close.Click
         Close()
     End Sub
@@ -101,7 +102,7 @@ Public Class Form_DocApprovalList
                             drlistDoc = dtDoc.Select("user_id = '" + TargetName + "' AND (approval_division_kbn = '1' OR approval_division_kbn = '9') AND
                                                                                                            (approval_department_kbn = '1' OR approval_department_kbn = '9') AND
                                                                                                            (approval_bureau_kbn = '1' OR approval_bureau_kbn = '9') AND
-                                                                                                            approval_manager_kbn = '0'")
+                                                                                                            approval_manager1_kbn = '0'")
                     End Select
                     If drlistDoc.Length > 0 Then
                         '所属データ取得
@@ -132,7 +133,7 @@ Public Class Form_DocApprovalList
                         '申請データをDataGridViewに表示
                         For Each drDoc As DataRow In drlistDoc
                             DataGridView_DocApproval.Rows.Add()
-                            DataGridView_DocApproval(0, Idx).Value = drUser("id_no")
+                            DataGridView_DocApproval(0, Idx).Value = drDoc("id_no")
                             DataGridView_DocApproval(2, Idx).Value = TargetBureau + Environment.NewLine + TargetDepartment + Environment.NewLine + TargetDivision
                             DataGridView_DocApproval(3, Idx).Value = drUser("full_name")
                             DataGridView_DocApproval(4, Idx).Value = Date.Parse(drDoc("create_date")).ToString("yyyy年MM月dd日（ddd）")
@@ -191,7 +192,7 @@ Public Class Form_DocApprovalList
                 '展開するZIP書庫のパス 
                 Dim zipFileName As String = ImportDir + "\" + TargetFileName
                 '展開したファイルを保存するフォルダ（存在しないと作成される） 
-                Dim targetDirectory As String = "C:\temp\kintai"
+                'Dim targetDirectory As String = "C:\kintaiKanriSystem"
                 '展開するファイルのフィルタ 
                 Dim fileFilter As String = ""
 
@@ -273,5 +274,11 @@ Public Class Form_DocApprovalList
             End If
         End If
         con = Nothing
+    End Sub
+
+    Private Sub Form_DocApprovalList_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        If IO.Directory.Exists(targetDirectory) Then
+            IO.Directory.Delete(targetDirectory, True)
+        End If
     End Sub
 End Class

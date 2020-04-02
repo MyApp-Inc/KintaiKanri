@@ -24,16 +24,18 @@ Partial Class Form_DocApprovalList
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form_DocApprovalList))
         Me.Button_Close = New System.Windows.Forms.Button()
-        Me.Label_MenuTitle = New System.Windows.Forms.Label()
+        Me.Label_Title = New System.Windows.Forms.Label()
         Me.Button_Reload = New System.Windows.Forms.Button()
         Me.DataGridView_DocApproval = New System.Windows.Forms.DataGridView()
         Me.Column_Id = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -58,16 +60,16 @@ Partial Class Form_DocApprovalList
         Me.Button_Close.Text = "閉じる"
         Me.Button_Close.UseVisualStyleBackColor = True
         '
-        'Label_MenuTitle
+        'Label_Title
         '
-        Me.Label_MenuTitle.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Label_MenuTitle.AutoSize = True
-        Me.Label_MenuTitle.Font = New System.Drawing.Font("MS UI Gothic", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.Label_MenuTitle.Location = New System.Drawing.Point(554, 23)
-        Me.Label_MenuTitle.Name = "Label_MenuTitle"
-        Me.Label_MenuTitle.Size = New System.Drawing.Size(213, 22)
-        Me.Label_MenuTitle.TabIndex = 12
-        Me.Label_MenuTitle.Text = "電子承認申請の承認"
+        Me.Label_Title.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Label_Title.AutoSize = True
+        Me.Label_Title.Font = New System.Drawing.Font("MS UI Gothic", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.Label_Title.Location = New System.Drawing.Point(554, 23)
+        Me.Label_Title.Name = "Label_Title"
+        Me.Label_Title.Size = New System.Drawing.Size(213, 22)
+        Me.Label_Title.TabIndex = 12
+        Me.Label_Title.Text = "電子承認申請の承認"
         '
         'Button_Reload
         '
@@ -84,7 +86,6 @@ Partial Class Form_DocApprovalList
         '
         Me.DataGridView_DocApproval.AllowUserToAddRows = False
         Me.DataGridView_DocApproval.AllowUserToDeleteRows = False
-        Me.DataGridView_DocApproval.AllowUserToOrderColumns = True
         Me.DataGridView_DocApproval.AllowUserToResizeColumns = False
         Me.DataGridView_DocApproval.AllowUserToResizeRows = False
         DataGridViewCellStyle1.Font = New System.Drawing.Font("MS UI Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
@@ -112,8 +113,8 @@ Partial Class Form_DocApprovalList
         Me.DataGridView_DocApproval.Name = "DataGridView_DocApproval"
         Me.DataGridView_DocApproval.ReadOnly = True
         Me.DataGridView_DocApproval.RowHeadersVisible = False
-        DataGridViewCellStyle9.Font = New System.Drawing.Font("MS UI Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.DataGridView_DocApproval.RowsDefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle11.Font = New System.Drawing.Font("MS UI Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.DataGridView_DocApproval.RowsDefaultCellStyle = DataGridViewCellStyle11
         Me.DataGridView_DocApproval.RowTemplate.Height = 40
         Me.DataGridView_DocApproval.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DataGridView_DocApproval.Size = New System.Drawing.Size(1296, 493)
@@ -121,6 +122,8 @@ Partial Class Form_DocApprovalList
         '
         'Column_Id
         '
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Column_Id.DefaultCellStyle = DataGridViewCellStyle3
         Me.Column_Id.FillWeight = 75.0!
         Me.Column_Id.HeaderText = "ID"
         Me.Column_Id.MaxInputLength = 5
@@ -131,9 +134,9 @@ Partial Class Form_DocApprovalList
         '
         'Column_File
         '
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Column_File.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Column_File.DefaultCellStyle = DataGridViewCellStyle4
         Me.Column_File.HeaderText = "申請ファイル"
         Me.Column_File.Name = "Column_File"
         Me.Column_File.ReadOnly = True
@@ -143,8 +146,9 @@ Partial Class Form_DocApprovalList
         '
         'Column_Group
         '
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Column_Group.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Column_Group.DefaultCellStyle = DataGridViewCellStyle5
         Me.Column_Group.FillWeight = 200.0!
         Me.Column_Group.HeaderText = "所属"
         Me.Column_Group.MaxInputLength = 100
@@ -155,9 +159,9 @@ Partial Class Form_DocApprovalList
         '
         'Column_FullName
         '
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Column_FullName.DefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Column_FullName.DefaultCellStyle = DataGridViewCellStyle6
         Me.Column_FullName.FillWeight = 130.0!
         Me.Column_FullName.HeaderText = "氏名"
         Me.Column_FullName.MaxInputLength = 100
@@ -168,6 +172,8 @@ Partial Class Form_DocApprovalList
         '
         'Column_Date
         '
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        Me.Column_Date.DefaultCellStyle = DataGridViewCellStyle7
         Me.Column_Date.FillWeight = 175.0!
         Me.Column_Date.HeaderText = "日付"
         Me.Column_Date.MaxInputLength = 100
@@ -177,8 +183,9 @@ Partial Class Form_DocApprovalList
         '
         'Column_BreakTime
         '
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Column_BreakTime.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Column_BreakTime.DefaultCellStyle = DataGridViewCellStyle8
         Me.Column_BreakTime.FillWeight = 300.0!
         Me.Column_BreakTime.HeaderText = "件名"
         Me.Column_BreakTime.MaxInputLength = 100
@@ -189,9 +196,9 @@ Partial Class Form_DocApprovalList
         '
         'Column_Verify
         '
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Column_Verify.DefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Column_Verify.DefaultCellStyle = DataGridViewCellStyle9
         Me.Column_Verify.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Column_Verify.HeaderText = ""
         Me.Column_Verify.Name = "Column_Verify"
@@ -202,9 +209,9 @@ Partial Class Form_DocApprovalList
         '
         'Column_Reject
         '
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.Column_Reject.DefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.Column_Reject.DefaultCellStyle = DataGridViewCellStyle10
         Me.Column_Reject.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Column_Reject.HeaderText = ""
         Me.Column_Reject.Name = "Column_Reject"
@@ -220,7 +227,7 @@ Partial Class Form_DocApprovalList
         Me.ClientSize = New System.Drawing.Size(1320, 610)
         Me.Controls.Add(Me.DataGridView_DocApproval)
         Me.Controls.Add(Me.Button_Reload)
-        Me.Controls.Add(Me.Label_MenuTitle)
+        Me.Controls.Add(Me.Label_Title)
         Me.Controls.Add(Me.Button_Close)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Form_DocApprovalList"
@@ -233,7 +240,7 @@ Partial Class Form_DocApprovalList
     End Sub
 
     Friend WithEvents Button_Close As Button
-    Friend WithEvents Label_MenuTitle As Label
+    Friend WithEvents Label_Title As Label
     Friend WithEvents Button_Reload As Button
     Friend WithEvents DataGridView_DocApproval As DataGridView
     Friend WithEvents Column_Id As DataGridViewTextBoxColumn
