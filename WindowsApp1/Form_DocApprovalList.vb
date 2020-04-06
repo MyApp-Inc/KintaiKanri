@@ -273,6 +273,7 @@ Public Class Form_DocApprovalList
                 DataGridView_DocApproval.Rows.RemoveAt(TargetRow)
             End If
         End If
+        DataGridView_DocApproval.ClearSelection()
         con = Nothing
     End Sub
 

@@ -75,6 +75,13 @@ Public Class Form_DocApprovalHistory
                     DataGridView_DocHistory(4, Idx).Style.ForeColor = Color.Blue
                     DataGridView_DocHistory.Rows(Idx).DefaultCellStyle.BackColor = Color.LightCyan
                 End If
+                If DataGridView_DocHistory(4, Idx).Value = "承認" Then
+                    DataGridView_DocHistory(5, Idx).Value = "出力"
+                    DataGridView_DocHistory(5, Idx).Style.BackColor = Color.LightGray
+                Else
+                    DataGridView_DocHistory(5, Idx).Value = "取下げ"
+                    DataGridView_DocHistory(5, Idx).Style.BackColor = Color.LightPink
+                End If
                 Idx = Idx + 1
             Next
             DataGridView_DocHistory.ClearSelection()
@@ -89,6 +96,8 @@ Public Class Form_DocApprovalHistory
         Dim SQLDoc As String = "SELECT * FROM tt_kintai_docapproval"
         'DataAdapterオブジェクトを生成
         Dim daDoc As New OracleDataAdapter(SQLDoc, con)
+        'OracleCommandBuilderオブジェクトを生成
+        Dim cmdbuilder As New OracleCommandBuilder(daDoc)
         'DataTableオブジェクトを生成
         Dim dtDoc As New DataTable()
         'DataTableとデータベースに同期させる
@@ -142,34 +151,51 @@ Public Class Form_DocApprovalHistory
                 Process.Start(targetDirectory)
             End If
         ElseIf dgv.Columns(e.ColumnIndex).Name = "Column_Print" Then
-            '出力ボタンがクリックされた時の処理
             'フィルタリングする
             Dim drlistDoc As DataRow() = dtDoc.Select("id_no = '" + TargetId + "'")
-            If drlistDoc.Length > 0 Then
-                Dim drDoc As DataRow = drlistDoc(0)
-                '対象のzipファイル名を取得（.zipを付与）
-                Dim TargetFileName As String = drDoc("file_name") + ".zip"
+            If DataGridView_DocHistory(e.ColumnIndex, e.RowIndex).Value = "出力" Then
+                '出力ボタンがクリックされた時の処理
+                If drlistDoc.Length > 0 Then
+                    Dim drDoc As DataRow = drlistDoc(0)
+                    '対象のzipファイル名を取得（.zipを付与）
+                    Dim TargetFileName As String = drDoc("file_name") + ".zip"
 
-                '開くZIP書庫 
-                Dim zipPath As String = ImportDir + "\" + TargetFileName
+                    '開くZIP書庫 
+                    Dim zipPath As String = ImportDir + "\" + TargetFileName
 
-                'ZipFileオブジェクトの作成 
-                Dim zf As New ICSharpCode.SharpZipLib.Zip.ZipFile(zipPath)
+                    'ZipFileオブジェクトの作成 
+                    Dim zf As New ICSharpCode.SharpZipLib.Zip.ZipFile(zipPath)
 
-                'ZIP内のエントリを列挙
-                Dim ze As ICSharpCode.SharpZipLib.Zip.ZipEntry
-                For Each ze In zf
-                    '情報を表示する 
-                    If ze.IsFile Then
-                        'ファイルのとき 
-                        Console.WriteLine("名前 : {0}", ze.Name)
-                    ElseIf ze.IsDirectory Then
-                        'ディレクトリのとき 
-                        Console.WriteLine("ディレクトリ名 : {0}", ze.Name)
-                    End If
-                Next
+                    'ZIP内のエントリを列挙
+                    Dim ze As ICSharpCode.SharpZipLib.Zip.ZipEntry
+                    For Each ze In zf
+                        '情報を表示する
+                        MsgBox("出力")
+                        If ze.IsFile Then
+                            'ファイルのとき 
+                            Console.WriteLine("名前 : {0}", ze.Name)
+                        ElseIf ze.IsDirectory Then
+                            'ディレクトリのとき 
+                            Console.WriteLine("ディレクトリ名 : {0}", ze.Name)
+                        End If
+                    Next
+                    '変数宣言
+                    Dim ex As New Microsoft.Office.Interop.Excel.Application
+                    Dim sh As Microsoft.Office.Interop.Excel.Worksheet
+                    Dim wb As Microsoft.Office.Interop.Excel.Workbook
+
+                End If
+            ElseIf DataGridView_DocHistory(e.ColumnIndex, e.RowIndex).Value = "取下げ" Then
+                '取下げボタンがクリックされた時の処理
+                If drlistDoc.Length > 0 Then
+                    Dim drDoc As DataRow = drlistDoc(0)
+                    drDoc.Delete()
+                    daDoc.Update(dtDoc)
+                    DataGridView_DocHistory.Rows.RemoveAt(TargetRow)
+                End If
             End If
         End If
+        DataGridView_DocHistory.ClearSelection()
         con = Nothing
     End Sub
 

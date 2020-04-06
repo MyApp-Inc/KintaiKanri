@@ -164,14 +164,15 @@ Partial Class Form_DocApprovalHistory
         'Column_Print
         '
         DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.Column_Print.DefaultCellStyle = DataGridViewCellStyle7
-        Me.Column_Print.HeaderText = "承認印出力"
+        Me.Column_Print.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Column_Print.HeaderText = "操作"
         Me.Column_Print.Name = "Column_Print"
         Me.Column_Print.ReadOnly = True
         Me.Column_Print.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.Column_Print.Text = "出力"
-        Me.Column_Print.UseColumnTextForButtonValue = True
+        Me.Column_Print.Text = "取下げ"
         '
         'Form_DocApprovalHistory
         '

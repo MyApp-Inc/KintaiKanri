@@ -44,9 +44,9 @@
         Me.Tab1 = Me.Factory.CreateRibbonTab
         Me.Group1 = Me.Factory.CreateRibbonGroup
         Me.Button_Execute = Me.Factory.CreateRibbonButton
-        Me.Button1 = Me.Factory.CreateRibbonButton
         Me.Button2 = Me.Factory.CreateRibbonButton
         Me.Button3 = Me.Factory.CreateRibbonButton
+        Me.Button1 = Me.Factory.CreateRibbonButton
         Me.Tab1.SuspendLayout()
         Me.Group1.SuspendLayout()
         Me.SuspendLayout()
@@ -74,11 +74,6 @@
         Me.Button_Execute.Name = "Button_Execute"
         Me.Button_Execute.ShowImage = True
         '
-        'Button1
-        '
-        Me.Button1.Label = "Button1"
-        Me.Button1.Name = "Button1"
-        '
         'Button2
         '
         Me.Button2.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge
@@ -94,6 +89,11 @@
         Me.Button3.Label = "電子承認印の押印"
         Me.Button3.Name = "Button3"
         Me.Button3.ShowImage = True
+        '
+        'Button1
+        '
+        Me.Button1.Label = "Button1"
+        Me.Button1.Name = "Button1"
         '
         'Ribbon_DocApproval
         '

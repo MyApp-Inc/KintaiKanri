@@ -127,7 +127,7 @@ Partial Class Form_DocApproval
         Me.Label_ApprovalPerson.Name = "Label_ApprovalPerson"
         Me.Label_ApprovalPerson.Size = New System.Drawing.Size(188, 16)
         Me.Label_ApprovalPerson.TabIndex = 16
-        Me.Label_ApprovalPerson.Text = "申請対象者（承認権者）："
+        Me.Label_ApprovalPerson.Text = "申請対象者（決裁権者）："
         '
         'CheckBox_Division
         '
