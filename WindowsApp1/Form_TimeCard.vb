@@ -499,8 +499,8 @@ Public Class Form_TimeCard
                 Else
                     row("approval_division_kbn") = 0
                 End If
-                '20時を超える申請の場合、部長・本部長・管理本部長へ申請
-                If Label_Tomorrow.Visible Or DateTimePicker_EndTime.Value > Date.Parse("2019/01/01 20:00:00") Then
+                '20時を超えるか、休日申請の場合、部長・本部長・管理本部長へ申請
+                If Label_Tomorrow.Visible Or DateTimePicker_EndTime.Value > Date.Parse("2019/01/01 20:00:00") Or IsHolidayWorking Then
                     If IdDepartment = 0 Or UserRole >= 2 Or IsDummyDepartment = 1 Then
                         row("approval_department_kbn") = 9
                     Else
@@ -542,8 +542,8 @@ Public Class Form_TimeCard
                     Else
                         dr("approval_division_kbn") = 0
                     End If
-                    '20時を超える申請の場合、部長・本部長・管理本部長へ申請
-                    If Label_Tomorrow.Visible Or DateTimePicker_EndTime.Value > Date.Parse("2019/01/01 20:00:00") Then
+                    '20時を超えるか、休日申請の場合、部長・本部長・管理本部長へ申請
+                    If Label_Tomorrow.Visible Or DateTimePicker_EndTime.Value > Date.Parse("2019/01/01 20:00:00") Or IsHolidayWorking Then
                         If IdDepartment = 0 Or UserRole >= 2 Or IsDummyDepartment = 1 Then
                             dr("approval_department_kbn") = 9
                         Else

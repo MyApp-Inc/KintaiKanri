@@ -185,6 +185,7 @@ Public Class Form_Main
         'フォームのインスタンスを生成する
         Dim cForm_Menu As New Form_Menu
         'モーダルでフォームを表示する
+        cForm_Menu.ShowInTaskbar = False
         cForm_Menu.ShowDialog(Me)
     End Sub
     '以下、テスト用機能
@@ -539,7 +540,7 @@ Public Class Form_Main
         End If
     End Sub
     Private Sub Form_Main_Resize(sender As Object, e As EventArgs) Handles Me.Resize
-        If Me.WindowState = FormWindowState.Minimized Then
+        If Me.WindowState = FormWindowState.Minimized And CheckBox_TaskTray.Checked Then
             'フォームを非表示にする
             Visible = False
             'バルーンTIPを起動後初回だけ表示

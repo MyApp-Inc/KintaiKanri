@@ -221,6 +221,7 @@ Public Class Form_VerifiedList
         'フォームのインスタンスを生成する
         Dim cForm_VerifiedHistory As New Form_VerifiedHistory
         'モーダルでフォームを表示する
+        cForm_VerifiedHistory.ShowInTaskbar = False
         cForm_VerifiedHistory.ShowDialog(Me)
     End Sub
 

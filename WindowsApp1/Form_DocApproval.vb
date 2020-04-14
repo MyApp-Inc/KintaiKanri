@@ -354,6 +354,7 @@ Public Class Form_DocApproval
         'フォームのインスタンスを生成する
         Dim cForm_DocApprovalhistory As New Form_DocApprovalHistory
         'モーダルでフォームを表示する
+        cForm_DocApprovalhistory.ShowInTaskbar = False
         cForm_DocApprovalhistory.ShowDialog(Me)
     End Sub
 End Class

@@ -23,11 +23,11 @@ Partial Class Form_Main
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form_Main))
         Me.Button_End = New System.Windows.Forms.Button()
         Me.Label_Title = New System.Windows.Forms.Label()
@@ -67,6 +67,7 @@ Partial Class Form_Main
         Me.NotifyIcon_Main = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.ContextMenuStrip_Settings = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.ToolStripMenuItem_End = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CheckBox_TaskTray = New System.Windows.Forms.CheckBox()
         CType(Me.DataGridView_Status, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ContextMenuStrip_Settings.SuspendLayout()
         Me.SuspendLayout()
@@ -192,6 +193,7 @@ Partial Class Form_Main
         Me.Button_TestT.TabIndex = 25
         Me.Button_TestT.Text = "テスト太郎"
         Me.Button_TestT.UseVisualStyleBackColor = True
+        Me.Button_TestT.Visible = False
         '
         'Button_TestH
         '
@@ -221,8 +223,8 @@ Partial Class Form_Main
         Me.DataGridView_Status.AllowUserToDeleteRows = False
         Me.DataGridView_Status.AllowUserToResizeColumns = False
         Me.DataGridView_Status.AllowUserToResizeRows = False
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("MS UI Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.DataGridView_Status.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("MS UI Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.DataGridView_Status.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle6
         Me.DataGridView_Status.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -231,40 +233,40 @@ Partial Class Form_Main
         Me.DataGridView_Status.BackgroundColor = System.Drawing.SystemColors.Window
         Me.DataGridView_Status.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal
         Me.DataGridView_Status.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("MS UI Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView_Status.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("MS UI Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView_Status.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
         Me.DataGridView_Status.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView_Status.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column_FullName, Me.Column_Sttatus, Me.Column_MainMessage, Me.Column_Update})
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("MS UI Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridView_Status.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("MS UI Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridView_Status.DefaultCellStyle = DataGridViewCellStyle8
         Me.DataGridView_Status.GridColor = System.Drawing.SystemColors.Window
         Me.DataGridView_Status.Location = New System.Drawing.Point(422, 58)
         Me.DataGridView_Status.MultiSelect = False
         Me.DataGridView_Status.Name = "DataGridView_Status"
         Me.DataGridView_Status.ReadOnly = True
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("MS UI Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView_Status.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("MS UI Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        DataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView_Status.RowHeadersDefaultCellStyle = DataGridViewCellStyle9
         Me.DataGridView_Status.RowHeadersVisible = False
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("MS UI Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.DataGridView_Status.RowsDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle10.Font = New System.Drawing.Font("MS UI Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.DataGridView_Status.RowsDefaultCellStyle = DataGridViewCellStyle10
         Me.DataGridView_Status.RowTemplate.Height = 21
         Me.DataGridView_Status.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridView_Status.Size = New System.Drawing.Size(777, 502)
@@ -494,15 +496,28 @@ Partial Class Form_Main
         '
         Me.ContextMenuStrip_Settings.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem_End})
         Me.ContextMenuStrip_Settings.Name = "ContextMenuStrip_Settings"
-        Me.ContextMenuStrip_Settings.Size = New System.Drawing.Size(181, 48)
+        Me.ContextMenuStrip_Settings.Size = New System.Drawing.Size(149, 26)
         Me.ContextMenuStrip_Settings.Text = "機能"
         '
         'ToolStripMenuItem_End
         '
         Me.ToolStripMenuItem_End.Name = "ToolStripMenuItem_End"
-        Me.ToolStripMenuItem_End.Size = New System.Drawing.Size(180, 22)
+        Me.ToolStripMenuItem_End.Size = New System.Drawing.Size(148, 22)
         Me.ToolStripMenuItem_End.Text = "終了（退勤）"
         Me.ToolStripMenuItem_End.ToolTipText = "勤怠管理システムを終了し、退勤時刻を打刻します。"
+        '
+        'CheckBox_TaskTray
+        '
+        Me.CheckBox_TaskTray.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.CheckBox_TaskTray.Appearance = System.Windows.Forms.Appearance.Button
+        Me.CheckBox_TaskTray.Font = New System.Drawing.Font("MS UI Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.CheckBox_TaskTray.Location = New System.Drawing.Point(864, 12)
+        Me.CheckBox_TaskTray.Name = "CheckBox_TaskTray"
+        Me.CheckBox_TaskTray.Size = New System.Drawing.Size(204, 36)
+        Me.CheckBox_TaskTray.TabIndex = 28
+        Me.CheckBox_TaskTray.Text = "最小化でタスクトレイ常駐"
+        Me.CheckBox_TaskTray.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.CheckBox_TaskTray.UseVisualStyleBackColor = True
         '
         'Form_Main
         '
@@ -511,6 +526,7 @@ Partial Class Form_Main
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(1211, 629)
+        Me.Controls.Add(Me.CheckBox_TaskTray)
         Me.Controls.Add(Me.Label_Notification)
         Me.Controls.Add(Me.Label_MainMessage)
         Me.Controls.Add(Me.Button_MainMessage)
@@ -588,4 +604,5 @@ Partial Class Form_Main
     Friend WithEvents NotifyIcon_Main As NotifyIcon
     Friend WithEvents ContextMenuStrip_Settings As ContextMenuStrip
     Friend WithEvents ToolStripMenuItem_End As ToolStripMenuItem
+    Friend WithEvents CheckBox_TaskTray As CheckBox
 End Class
