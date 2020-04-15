@@ -145,4 +145,12 @@ Public Class Form_Menu
         cForm_DocApprovalList.ShowInTaskbar = False
         cForm_DocApprovalList.ShowDialog(Me)
     End Sub
+
+    Private Sub Button_MenuCheckTimeCard_Click(sender As Object, e As EventArgs) Handles Button_MenuCheckTimeCard.Click
+        'フォームのインスタンスを生成する
+        Dim cForm_CheckTimeCard As New Form_CheckTimeCard
+        'モーダルでフォームを表示する
+        cForm_CheckTimeCard.ShowInTaskbar = False
+        cForm_CheckTimeCard.ShowDialog(Me)
+    End Sub
 End Class

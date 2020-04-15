@@ -39,6 +39,7 @@ Partial Class Form_Menu
         Me.Button_MenuReadICCard = New System.Windows.Forms.Button()
         Me.Button_DocApproval = New System.Windows.Forms.Button()
         Me.Button_DocApprovalList = New System.Windows.Forms.Button()
+        Me.Button_MenuCheckTimeCard = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Button_MenuEnd
@@ -78,7 +79,7 @@ Partial Class Form_Menu
         '
         Me.Button_MenuVerify.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Button_MenuVerify.Font = New System.Drawing.Font("MS UI Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.Button_MenuVerify.Location = New System.Drawing.Point(16, 251)
+        Me.Button_MenuVerify.Location = New System.Drawing.Point(314, 251)
         Me.Button_MenuVerify.Name = "Button_MenuVerify"
         Me.Button_MenuVerify.Size = New System.Drawing.Size(266, 36)
         Me.Button_MenuVerify.TabIndex = 1
@@ -210,12 +211,23 @@ Partial Class Form_Menu
         '
         Me.Button_DocApprovalList.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Button_DocApprovalList.Font = New System.Drawing.Font("MS UI Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.Button_DocApprovalList.Location = New System.Drawing.Point(314, 251)
+        Me.Button_DocApprovalList.Location = New System.Drawing.Point(610, 251)
         Me.Button_DocApprovalList.Name = "Button_DocApprovalList"
         Me.Button_DocApprovalList.Size = New System.Drawing.Size(266, 36)
         Me.Button_DocApprovalList.TabIndex = 15
         Me.Button_DocApprovalList.Text = "電子承認申請の承認"
         Me.Button_DocApprovalList.UseVisualStyleBackColor = True
+        '
+        'Button_MenuCheckTimeCard
+        '
+        Me.Button_MenuCheckTimeCard.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Button_MenuCheckTimeCard.Font = New System.Drawing.Font("MS UI Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.Button_MenuCheckTimeCard.Location = New System.Drawing.Point(16, 251)
+        Me.Button_MenuCheckTimeCard.Name = "Button_MenuCheckTimeCard"
+        Me.Button_MenuCheckTimeCard.Size = New System.Drawing.Size(266, 36)
+        Me.Button_MenuCheckTimeCard.TabIndex = 16
+        Me.Button_MenuCheckTimeCard.Text = "勤務時間確認"
+        Me.Button_MenuCheckTimeCard.UseVisualStyleBackColor = True
         '
         'Form_Menu
         '
@@ -223,6 +235,7 @@ Partial Class Form_Menu
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.ClientSize = New System.Drawing.Size(888, 578)
+        Me.Controls.Add(Me.Button_MenuCheckTimeCard)
         Me.Controls.Add(Me.Button_DocApprovalList)
         Me.Controls.Add(Me.Button_DocApproval)
         Me.Controls.Add(Me.Button_MenuReadICCard)
@@ -264,4 +277,5 @@ Partial Class Form_Menu
     Friend WithEvents Button_MenuReadICCard As Button
     Friend WithEvents Button_DocApproval As Button
     Friend WithEvents Button_DocApprovalList As Button
+    Friend WithEvents Button_MenuCheckTimeCard As Button
 End Class
