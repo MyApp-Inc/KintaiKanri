@@ -117,52 +117,57 @@ Public Class Form_Main
             Timer_ReloadStatus.Enabled = False
             StatusChange(0)
             MouseCheck()
-            ExportRecentFile()
-            ExportHistory()
-            Dim DBName As String = SystemInformation.UserName
-            'SqlConnectionオブジェクトを生成
-            Dim Con As New OracleConnection(Constr)
-            'SQL文を作成
-            Dim SQL As String = "SELECT * FROM tt_kintai_timecard"
-            'DataAdapterオブジェクトを生成
-            Dim da As New OracleDataAdapter(SQL, Con)
-            'SqlCommandBuilderオブジェクトを生成
-            Dim cmdbuilder As New OracleCommandBuilder(da)
-            'DataTableオブジェクトを生成
-            Dim dt As New DataTable()
-            'DataTableとデータベースに同期させる
-            da.Fill(dt)
-            'フィルタリングする
-            Dim drAll As Integer = dt.Rows.Count
-            Dim drlist As DataRow() = dt.Select("user_id = '" + DBName + "' AND workingday = '" + DBDate + "'")
-            '検索結果により分岐（追加or編集）
-            If drlist.Length = 0 Then
-                Dim row As DataRow = dt.NewRow '追加行を宣言
-                '値をセット
-                row("id_no") = drAll + 1
-                row("user_id") = DBName
-                row("workingday") = DBDate
-                row("start_time") = DBStartTime
-                row("end_time") = DBEndTime
-                row("create_date") = Date.Now
-                row("update_date") = Date.Now
-                row("create_program") = "KINTAI_KANRI_SYSTEM"
-                row("update_program") = "KINTAI_KANRI_SYSTEM"
-                row("create_user") = DBName
-                row("update_user") = DBName
-                'テーブルの末尾に追加
-                dt.Rows.Add(row)
-                da.Update(dt)
-            Else
-                For Each dr As DataRow In drlist
-                    dr("end_time") = DBEndTime
-                    dr("update_date") = Date.Now
-                    dr("update_program") = "KINTAI_KANRI_SYSTEM"
-                    dr("update_user") = DBName
+            Try
+                ExportRecentFile()
+            Catch ex As SyntaxErrorException
+                MsgBox("終了時にエラーが発生しました。もう一度勤怠管理システムを起動し、終了させてください。", vbOKOnly, "エラー")
+            Finally
+                Dim DBName As String = SystemInformation.UserName
+                'SqlConnectionオブジェクトを生成
+                Dim Con As New OracleConnection(Constr)
+                'SQL文を作成
+                Dim SQL As String = "SELECT * FROM tt_kintai_timecard"
+                'DataAdapterオブジェクトを生成
+                Dim da As New OracleDataAdapter(SQL, Con)
+                'SqlCommandBuilderオブジェクトを生成
+                Dim cmdbuilder As New OracleCommandBuilder(da)
+                'DataTableオブジェクトを生成
+                Dim dt As New DataTable()
+                'DataTableとデータベースに同期させる
+                da.Fill(dt)
+                'フィルタリングする
+                Dim drAll As Integer = dt.Rows.Count
+                Dim drlist As DataRow() = dt.Select("user_id = '" + DBName + "' AND workingday = '" + DBDate + "'")
+                '検索結果により分岐（追加or編集）
+                If drlist.Length = 0 Then
+                    Dim row As DataRow = dt.NewRow '追加行を宣言
+                    '値をセット
+                    row("id_no") = drAll + 1
+                    row("user_id") = DBName
+                    row("workingday") = DBDate
+                    row("start_time") = DBStartTime
+                    row("end_time") = DBEndTime
+                    row("create_date") = Date.Now
+                    row("update_date") = Date.Now
+                    row("create_program") = "KINTAI_KANRI_SYSTEM"
+                    row("update_program") = "KINTAI_KANRI_SYSTEM"
+                    row("create_user") = DBName
+                    row("update_user") = DBName
+                    'テーブルの末尾に追加
+                    dt.Rows.Add(row)
                     da.Update(dt)
-                Next
-            End If
-            Con = Nothing
+                Else
+                    For Each dr As DataRow In drlist
+                        dr("end_time") = DBEndTime
+                        dr("update_date") = Date.Now
+                        dr("update_program") = "KINTAI_KANRI_SYSTEM"
+                        dr("update_user") = DBName
+                        da.Update(dt)
+                    Next
+                End If
+                Con = Nothing
+            End Try
+            'ExportHistory()
         End If
     End Sub
 
@@ -530,6 +535,7 @@ Public Class Form_Main
                 End If
             Next
         End If
+        Con = Nothing
     End Sub
 
     Private Sub ExportHistory()

@@ -52,6 +52,8 @@ Public Class Form_Menu
                 'Role:0（課員）なら勤怠承認ボタン非活性
                 If Role = 0 Then
                     Button_MenuVerify.Enabled = False
+                    Button_MenuCheckTimeCard.Enabled = False
+                    Button_DocApprovalList.Enabled = False
                 End If
                 Dim Admin As Integer = drUser("admin_kbn")
                 'Adminの値に応じてボタン非活性
