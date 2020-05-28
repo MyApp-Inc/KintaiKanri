@@ -25,12 +25,9 @@ Partial Class Main
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Main))
         Me.Label_Title = New System.Windows.Forms.Label()
-        Me.NotifyIcon_Main = New System.Windows.Forms.NotifyIcon(Me.components)
-        Me.ContextMenuStrip_Main = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.ToolStripMenuItem_End = New System.Windows.Forms.ToolStripMenuItem()
         Me.Timer_MouseCheck = New System.Windows.Forms.Timer(Me.components)
         Me.Timer_Recent = New System.Windows.Forms.Timer(Me.components)
-        Me.ContextMenuStrip_Main.SuspendLayout()
+        Me.Timer_LogFile = New System.Windows.Forms.Timer(Me.components)
         Me.SuspendLayout()
         '
         'Label_Title
@@ -40,32 +37,9 @@ Partial Class Main
         Me.Label_Title.Font = New System.Drawing.Font("MS UI Gothic", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.Label_Title.Location = New System.Drawing.Point(12, 44)
         Me.Label_Title.Name = "Label_Title"
-        Me.Label_Title.Size = New System.Drawing.Size(192, 22)
+        Me.Label_Title.Size = New System.Drawing.Size(146, 22)
         Me.Label_Title.TabIndex = 14
-        Me.Label_Title.Text = "勤怠ログ管理ツール"
-        '
-        'NotifyIcon_Main
-        '
-        Me.NotifyIcon_Main.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info
-        Me.NotifyIcon_Main.BalloonTipText = "勤怠ログ管理ツールが起動しました"
-        Me.NotifyIcon_Main.BalloonTipTitle = "勤怠ログ管理ツール"
-        Me.NotifyIcon_Main.ContextMenuStrip = Me.ContextMenuStrip_Main
-        Me.NotifyIcon_Main.Icon = CType(resources.GetObject("NotifyIcon_Main.Icon"), System.Drawing.Icon)
-        Me.NotifyIcon_Main.Text = "勤怠ログ管理ツール"
-        Me.NotifyIcon_Main.Visible = True
-        '
-        'ContextMenuStrip_Main
-        '
-        Me.ContextMenuStrip_Main.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem_End})
-        Me.ContextMenuStrip_Main.Name = "ContextMenuStrip_Main"
-        Me.ContextMenuStrip_Main.Size = New System.Drawing.Size(101, 26)
-        Me.ContextMenuStrip_Main.Text = "機能"
-        '
-        'ToolStripMenuItem_End
-        '
-        Me.ToolStripMenuItem_End.Name = "ToolStripMenuItem_End"
-        Me.ToolStripMenuItem_End.Size = New System.Drawing.Size(100, 22)
-        Me.ToolStripMenuItem_End.Text = "終了"
+        Me.Label_Title.Text = "ログ管理ツール"
         '
         'Timer_MouseCheck
         '
@@ -75,7 +49,12 @@ Partial Class Main
         'Timer_Recent
         '
         Me.Timer_Recent.Enabled = True
-        Me.Timer_Recent.Interval = 3600000
+        Me.Timer_Recent.Interval = 300000
+        '
+        'Timer_LogFile
+        '
+        Me.Timer_LogFile.Enabled = True
+        Me.Timer_LogFile.Interval = 60000
         '
         'Main
         '
@@ -85,17 +64,14 @@ Partial Class Main
         Me.Controls.Add(Me.Label_Title)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Main"
-        Me.Text = "勤怠ログ管理ツール"
-        Me.ContextMenuStrip_Main.ResumeLayout(False)
+        Me.Text = "ログ管理ツール"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents Label_Title As Label
-    Friend WithEvents NotifyIcon_Main As NotifyIcon
-    Friend WithEvents ContextMenuStrip_Main As ContextMenuStrip
-    Friend WithEvents ToolStripMenuItem_End As ToolStripMenuItem
     Friend WithEvents Timer_MouseCheck As Timer
     Friend WithEvents Timer_Recent As Timer
+    Friend WithEvents Timer_LogFile As Timer
 End Class
